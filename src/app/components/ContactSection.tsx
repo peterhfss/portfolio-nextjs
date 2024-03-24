@@ -2,7 +2,7 @@ import Form from "./Form";
 
 const ContactSection = () =>{
   return(
-    <section className="h-full bg-tertiary px-48 py-32 flex flex-col justify-start gap-10">
+    <section className="h-full bg-tertiary px-48 py-32 flex flex-col justify-start gap-10" id="contact">
        <h1 className="font-mono text-secundary text-4xl">
         Contact
       </h1>

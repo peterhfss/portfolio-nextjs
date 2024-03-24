@@ -14,7 +14,7 @@ interface ProjectProps{
 const Project = (props : ProjectProps) => {
   if(props.id % 2 == 0){
     return(
-      <div className="flex bg-tertiary-500 w-full h-[396px] rounded-b-xl rounded-t-xl">
+      <div className="flex bg-tertiary-500 w-[960px] h-[396px] rounded-b-xl rounded-t-xl">
         <div className="w-3/5 relative">
           <Image 
             src={props.image} 
@@ -38,7 +38,7 @@ const Project = (props : ProjectProps) => {
   }
   
   return(
-    <div className="flex bg-tertiary-500 w-full h-[396px] rounded-b-xl rounded-t-xl">
+    <div className="flex bg-tertiary-500 w-[960px] h-[396px] rounded-b-xl rounded-t-xl">
       <div className="w-2/5 flex flex-col gap-20 justify-center items-center p-14">
         <h3 className="font-sans text-primary-100">{props.title}</h3>
         <p className="w-80 text-center text-sm font-sans text-primary-100">{props.description}</p>

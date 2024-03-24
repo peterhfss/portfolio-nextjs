@@ -6,7 +6,7 @@ const roboto_mono = Roboto_Mono({ subsets: ["latin"], variable: '--font-roboto-m
 const dm_sans = DM_Sans({ subsets: ["latin"] , variable: '--font-dm-sans' });
 
 export const metadata: Metadata = {
-  title: "Portfolio Full Stack Developer | Pedro Henrique",
+  title: "Pedro Henrique | Full Stack Developer Portfolio ",
   description: "Portfolio",
 };
 

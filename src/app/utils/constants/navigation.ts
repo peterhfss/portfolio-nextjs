@@ -8,22 +8,22 @@ const links : Link[] = [
   {
     id: 0, 
     name:'About', 
-    url: '/About'
+    url: '#about'
   },
   {
     id: 1, 
     name:'Projects', 
-    url: '/Projects'
+    url: '#projects'
   },
   {
     id: 2, 
     name:'Skills', 
-    url: '/Skills'
+    url: '#skills'
   },
   {
     id: 3, 
     name:'Contact', 
-    url: '/Contact'
+    url: '#contact'
   }
 ]
 

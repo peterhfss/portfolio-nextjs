@@ -4,24 +4,47 @@
 
 @layer utilities{
   
-  .content-link:hover {
-    color: #2DD4BF;
+  ::-webkit-scrollbar{
+    width: 2px;
+    display: none;
   }
 
-  .tag-code{
-    padding: .2em .2em;
-    color: #2DD4BF;
-    position: relative;
-    font-size: 20px;
+  .menu-link:before{
+    content:"<";
+    margin-right: 10px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: transform 0.3s , opacity 0.2s;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
   }
 
-  .tag-code::before,
-  .tag-code::after{
-    content: '';
-    height: 14px;
-    width: 14px;
-    position: absolute;
-    transition: all .35s ease;
+  .menu-link:after{
+    content:">";
+    margin-left: 10px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: transform 0.3s , opacity 0.2s;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+  }
+
+  .menu-link:hover::after,
+  .menu-link:hover::before{
     opacity: 1;
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
   }
+
+  .menu-link:active{
+    color:#5555;
+  }
+
 }
