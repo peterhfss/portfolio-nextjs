@@ -1,6 +1,6 @@
 const Form = () =>{
   return(
-    <form action="" className="flex flex-col gap-6 text-base text-white  w-[560px]">
+    <form action="" className="flex flex-col gap-6 text-base text-white ">
       <label htmlFor="name" className="flex gap-8">
         <span>
           01

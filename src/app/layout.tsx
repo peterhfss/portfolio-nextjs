@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto_mono.variable} ${dm_sans.variable} font-mono h-screen`  }>{children}</body>
+      <body className={`${roboto_mono.variable} ${dm_sans.variable} font-mono`}>{children}</body>
     </html>
   );
 }

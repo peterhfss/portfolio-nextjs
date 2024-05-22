@@ -14,17 +14,17 @@ interface ProjectProps{
 const Project = (props : ProjectProps) => {
   if(props.id % 2 == 0){
     return(
-      <div className="flex bg-tertiary-500 w-[960px] h-[396px] rounded-b-xl rounded-t-xl">
-        <div className="w-3/5 relative">
+      <div className="bg-tertiary-800 w-[290px] h-[430px] rounded-lg flex flex-col">
+        <div className="h-2/4 w-full relative ">
           <Image 
             src={props.image} 
             alt={props.title} fill={true}
-            className="w-full" />
+            className="w-full rounded-t-lg" />
         </div>
-        <div className="w-2/5 flex flex-col gap-20 justify-center items-center p-14">
-          <h3 className="font-sans text-primary-100">{props.title}</h3>
-          <p className="w-80 text-center text-sm font-sans text-primary-100">{props.description}</p>
-          <div className="flex w-44 h-10 justify-center gap-20">
+        <div className="flex p-6 flex-col gap-5 justify-center items-center">
+          <h3 className="font-sans text-primary-200">{props.title}</h3>
+          <p className="text-center  font-sans text-primary-200 text-xs">{props.description}</p>
+          <div className="flex gap-4 justify-center">
             <Link href={props.url_github}>
               <GitHubLogoIcon className="w-6 h-6 text-gray-900"/>
             </Link>
@@ -38,11 +38,11 @@ const Project = (props : ProjectProps) => {
   }
   
   return(
-    <div className="flex bg-tertiary-500 w-[960px] h-[396px] rounded-b-xl rounded-t-xl">
-      <div className="w-2/5 flex flex-col gap-20 justify-center items-center p-14">
-        <h3 className="font-sans text-primary-100">{props.title}</h3>
-        <p className="w-80 text-center text-sm font-sans text-primary-100">{props.description}</p>
-        <div className="flex w-44 h-10 justify-center gap-20">
+    <div className="bg-tertiary-800 w-[290px] h-[410px] rounded-lg flex flex-col">
+      <div className="flex p-6 flex-col gap-5 justify-center items-center">
+        <h3 className="font-sans text-primary-200">{props.title}</h3>
+        <p className="text-center  font-sans text-primary-200 text-xs">{props.description}</p>
+        <div className="flex gap-4 justify-center">
           <Link href={props.url_github}>
             <GitHubLogoIcon className="w-6 h-6 text-gray-900"/>
           </Link>
@@ -51,11 +51,11 @@ const Project = (props : ProjectProps) => {
           </Link>
         </div>
       </div>
-      <div className="w-3/5 relative object-contain">
+      <div className="h-2/4 w-full relative ">
         <Image 
           src={props.image} 
           alt={props.title} fill={true}
-          className="w-full" />
+          className="w-full rounded-b-lg" />
       </div>
     </div>
   )

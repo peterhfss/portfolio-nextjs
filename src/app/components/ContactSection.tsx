@@ -2,17 +2,20 @@ import Form from "./Form";
 
 const ContactSection = () =>{
   return(
-    <section className="h-full bg-tertiary px-48 py-32 flex flex-col justify-start gap-10" id="contact">
-       <h1 className="font-mono text-secundary text-4xl">
-        Contact
-      </h1>
-      <div className="flex justify-evenly items-center mx-auto my-0 w-full h-full p-8">
-        <h2 className="text-5xl/normal w-[480px] h-auto font-mono font-bold text-primary-600">
-          Let&apos;s start a project together
-        </h2>
-        <Form />
+    <section className="bg-tertiary w-full" id="contact">
+      <div className="flex flex-col p-6 items-center gap-4">
+        <div className="w-full">
+          <h1 className="font-mono text-secundary text-[32px]">
+            Contact
+          </h1>
+        </div>
+        <div className="flex flex-col items-center gap-8 ">
+          <h2 className="text-2xl/normal font-mono font-bold text-primary-600 text-center">
+            Let&apos;s start a project together
+          </h2>
+          <Form />
+        </div>
       </div>
-      
     </section>
   )
 }

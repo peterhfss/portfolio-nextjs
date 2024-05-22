@@ -1,15 +1,17 @@
 
+
 interface Skill{
   id: number,
   title: string,
-  description: string
+  description: string,
 }
 
 const skills : Skill[] = [
   {
     id:0,
     title: 'Design',
-    description: 'Built digital products with creativity and responsive design'
+    description: 'Built digital products with creativity and responsive design',
+    
   },
   {
     id:1,

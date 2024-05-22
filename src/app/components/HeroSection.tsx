@@ -1,13 +1,18 @@
+import SidebarSocialLinks from "./SidebarSocialLinks";
+
 const HeroSection = () =>{
   return(
-    <section className="flex flex-col h-screen p-72">
-      <h1 className="font-sans text-5xl text-secundary pb-2">
-        Pedro Henrique
-      </h1>
-      <h2 className="text-primary-500 text-xl font-medium w-[560px]">
-        A designer/full-stack developer with a passion for 
-        web design and turnig code into creative solutions
-      </h2>
+    <section className="h-screen" id="hero"> 
+        <div className="flex flex-col justify-center p-6 h-full lg:px-32 lg:pb-36 gap-2">
+          <h1 className="font-sans text-secundary lg:mb-4 text-3xl lg:text-6xl font-extrabold">
+            Pedro Henrique
+          </h1>
+          <h2 className="text-primary-500 text-sm lg:text-xl font-medium lg:leading-6 lg:w-[560px]">
+            A designer/full-stack developer with a passion for 
+            web design and turnig code into creative solutions
+          </h2>
+          <SidebarSocialLinks />
+      </div>
     </section>
   )
 }
