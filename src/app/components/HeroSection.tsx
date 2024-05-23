@@ -3,7 +3,7 @@ import SidebarSocialLinks from "./SidebarSocialLinks";
 const HeroSection = () =>{
   return(
     <section className="h-screen" id="hero"> 
-        <div className="flex flex-col justify-center p-6 h-full lg:px-32 lg:pb-36 gap-2">
+        <div className="flex flex-col justify-center p-6 h-full lg:px-64 lg:pb-36 gap-2">
           <h1 className="font-sans text-secundary lg:mb-4 text-3xl lg:text-6xl font-extrabold">
             Pedro Henrique
           </h1>

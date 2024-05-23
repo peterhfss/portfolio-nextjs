@@ -12,27 +12,20 @@ const projects : Project[] = [
   {
     id:0,
     title: 'Pokedex',
-    image_preview:'/images/preview.png',
+    image_preview:'/images/previews/pokedex_preview.png',
     description: 'A website developed that integrates the REStful Pokémon API, for realizes search by name or number and returns data about the specific pokémon.',
-    url_deploy:'url1',
-    url_github: 'url2'
+    url_deploy:'https://peterhfss.github.io/pokedex/',
+    url_github: 'https://github.com/peterhfss/pokedex'
   },
   {
     id:1,
-    title: 'Pokedex',
-    image_preview:'/images/preview.png',
-    description: 'A website developed that integrates the REStful Pokémon API, for realizes search by name or number and returns data about the specific pokémon.',
-    url_deploy:'url1',
-    url_github: 'url2'
+    title: 'To Do List',
+    image_preview:'/images/previews/todo-list_preview.jpg',
+    description: 'Final project of the first React training module by Rockeseat.',
+    url_deploy:'https://peterhfss.github.io/ignite-reactjs-challenge01-todo-list/',
+    url_github: 'https://github.com/peterhfss/ignite-reactjs-challenge01-todo-list'
   },
-  {
-    id:2,
-    title: 'Pokedex',
-    image_preview:'/images/preview.png',
-    description: 'A website developed that integrates the REStful Pokémon API, for realizes search by name or number and returns data about the specific pokémon.',
-    url_deploy:'url1',
-    url_github: 'url2'
-  },
+  
 ]
 
 export default projects;

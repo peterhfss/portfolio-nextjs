@@ -12,54 +12,29 @@ interface ProjectProps{
 }
 
 const Project = (props : ProjectProps) => {
-  if(props.id % 2 == 0){
+ 
     return(
-      <div className="bg-tertiary-800 w-[290px] h-[430px] rounded-lg flex flex-col">
-        <div className="h-2/4 w-full relative ">
+      <div className="bg-tertiary-800 w-[290px] h-auto rounded-lg flex flex-col md:flex-row lg:w-[880px] md:w-[580px] ">
+        <div className={`w-full h-72 relative ${props.id % 2 == 0 ? 'order-2' : ''} bg-tertiary-900`}>
           <Image 
             src={props.image} 
             alt={props.title} fill={true}
-            className="w-full rounded-t-lg" />
+            className="w-full h-full md:object-fill" />
         </div>
-        <div className="flex p-6 flex-col gap-5 justify-center items-center">
+        <div className="flex p-6 flex-col gap-5 justify-center items-center lg:w-96 md:w-[290px]">
           <h3 className="font-sans text-primary-200">{props.title}</h3>
           <p className="text-center  font-sans text-primary-200 text-xs">{props.description}</p>
           <div className="flex gap-4 justify-center">
-            <Link href={props.url_github}>
-              <GitHubLogoIcon className="w-6 h-6 text-gray-900"/>
+            <Link href={props.url_github} target="_blank">
+              <GitHubLogoIcon className="w-6 h-6 text-tertiary-500 hover:text-tertiary-600"/>
             </Link>
-            <Link href={props.url_deploy}>
-              <ExternalLinkIcon className="w-6 h-6 text-gray-900"/>
+            <Link href={props.url_deploy} target="_blank">
+              <ExternalLinkIcon className="w-6 h-6 text-tertiary-500 hover:text-tertiary-600"/>
             </Link>
           </div>
         </div>
       </div>
     )
-  }
-  
-  return(
-    <div className="bg-tertiary-800 w-[290px] h-[410px] rounded-lg flex flex-col">
-      <div className="flex p-6 flex-col gap-5 justify-center items-center">
-        <h3 className="font-sans text-primary-200">{props.title}</h3>
-        <p className="text-center  font-sans text-primary-200 text-xs">{props.description}</p>
-        <div className="flex gap-4 justify-center">
-          <Link href={props.url_github}>
-            <GitHubLogoIcon className="w-6 h-6 text-gray-900"/>
-          </Link>
-          <Link href={props.url_deploy}>
-            <ExternalLinkIcon className="w-6 h-6 text-gray-900"/>
-          </Link>
-        </div>
-      </div>
-      <div className="h-2/4 w-full relative ">
-        <Image 
-          src={props.image} 
-          alt={props.title} fill={true}
-          className="w-full rounded-b-lg" />
-      </div>
-    </div>
-  )
-  
 }
 
 export default Project
