@@ -3,7 +3,7 @@ import Profile from "../../../public/images/Profile.jpg";
 
 const AboutSection = () =>{
   return(
-    <section className="bg-primary h-screen flex justify-center items-center" id="about">
+    <section className="bg-primary h-screen flex justify-center items-center lg:px-32 lg:py-36" id="about">
       <div className="flex flex-col lg:w-[1040px] gap-2 px-6 md:pt-12 lg:m-auto lg:py-4 lg:gap-20">
         <h1 className="font-mono text-secundary text-2xl text-right w-full px-4 lg:text-[32px] md:px-8">
           About
