@@ -1,6 +1,6 @@
 const Form = () =>{
   return(
-    <form action="" className="flex flex-col gap-6 text-base text-white ">
+    <form action="" className="flex flex-col gap-11 text-base text-white lg:gap-6">
       <label htmlFor="name" className="flex gap-8">
         <span>
           01
@@ -35,7 +35,7 @@ const Form = () =>{
         Your message
       </label>
 
-      <textarea className="bg-transparent resize-y max-h-24 border-b-2 p-0 border-tertiary-800 focus:outline-none focus:border-secundary h-auto transition-colors" />
+      <textarea rows={1} className="bg-transparent resize-y border-b-2 p-1 border-tertiary-800 focus:outline-none focus:border-secundary h-auto transition-colors" />
 
       <button className="w-24 h-9 bg-secundary-800 relative left-3/4 text-sm rounded p-2 hover:bg-secundary hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-secundary-200">
         Send it!

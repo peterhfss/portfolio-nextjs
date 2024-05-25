@@ -5,7 +5,7 @@ import { NextJSLogo, NodeJSLogo, PythonLogo, ReactLogo, ReactNativeLogo } from "
 
 const SkillsSection = () =>{
   return(
-    <section className="bg-primary h-auto pt-28 px-6 lg:px-32 lg:py-36 md:h-screen" id="skills">
+    <section className="bg-primary h-auto py-28 px-6 lg:px-32 lg:py-36 md:h-screen" id="skills">
       <div className="flex flex-col gap-9 lg:justify-center lg:items-center md:gap-28 lg:gap-20">
         <div className="w-full text-right lg:px-44">
           <h1 className="font-mono text-secundary text-2xl lg:text-[32px] ">
