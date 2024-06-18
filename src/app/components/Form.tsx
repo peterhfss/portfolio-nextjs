@@ -1,11 +1,21 @@
-const Form = () =>{
+import { Locale } from "@/config/i18n.config";
+interface IFormProps{
+  lang: Locale; 
+}
+
+const Form = ({lang}: IFormProps) =>{
+
+   const handleSendNewMessage =  async () =>{ 
+      await fetch(`${lang}/api/send`,{method:"POST"});
+  }
+
   return(
     <form action="" className="flex flex-col gap-11 text-base text-white lg:gap-6">
       <label htmlFor="name" className="flex gap-8">
         <span>
           01
         </span>
-        What&apos;s your name?
+        {lang === 'en-US' ? "What's your name?" : 'Qual seu nome?'}
       </label>
 
       <input type="text" className="bg-transparent border-b-2 border-tertiary-800 focus:outline-none focus:border-secundary transition-colors"/>
@@ -14,16 +24,16 @@ const Form = () =>{
         <span>
           02
         </span>
-        What&apos;s your email?
+        {lang === 'en-US' ? "What's your email?" : 'Qual seu email?'}
       </label>
 
-      <input type="text" className="bg-transparent border-b-2 border-tertiary-800 focus:outline-none focus:border-secundary transition-colors" />
+      <input type="text"  className="bg-transparent border-b-2 border-tertiary-800 focus:outline-none focus:border-secundary transition-colors" />
 
       <label htmlFor="services" className="flex gap-8">
         <span>
           03
         </span>
-          What services are you looking for?
+        {lang === 'en-US' ? 'What services are you looking for?' : 'Quais  serviços você esta buscando?'}
       </label>
 
       <input type="text" className="bg-transparent border-b-2 border-tertiary-800 focus:outline-none focus:border-secundary transition-colors"/>
@@ -32,13 +42,13 @@ const Form = () =>{
         <span>
           04
         </span>
-        Your message
+        {lang === 'en-US' ? 'Your message' : 'Sua mensagem'}
       </label>
 
       <textarea rows={1} className="bg-transparent resize-y border-b-2 p-1 border-tertiary-800 focus:outline-none focus:border-secundary h-auto transition-colors" />
 
-      <button className="w-24 h-9 bg-secundary-800 relative left-3/4 text-sm rounded p-2 hover:bg-secundary hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-secundary-200">
-        Send it!
+      <button onClick={handleSendNewMessage} className="w-24 h-9 bg-secundary-800 relative left-3/4 text-sm rounded p-2 hover:bg-secundary hover:text-primary-900 focus:outline-none focus:ring-2 focus:ring-secundary-200">
+        {lang === 'en-US' ? 'Send it!' : 'Enviar!'}  
       </button>
     </form>
   )

@@ -3,13 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../../public/images/Logo.svg';
 import links from "../utils/constants/navigation";
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
+import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { NavigationMenu,NavigationMenuContent,NavigationMenuTrigger, NavigationMenuItem,navigationMenuTriggerStyle, NavigationMenuLink, NavigationMenuList,} from "@/components/ui/navigation-menu"
+import { Locale } from "@/config/i18n.config";
 
-const Navbar = () =>{
+interface INavProps{
+  lang: Locale;
+}
+
+const Navbar = ({lang}:INavProps) =>{
 
   const [nav,setNav] = useState(false);
-  const [activeLink, setActiveLink] = useState('#');
-
+  const [activeLink, setActiveLink] = useState('/');
+  
   const handleNav = () =>{
     setNav(!nav);
   }
@@ -25,15 +31,33 @@ const Navbar = () =>{
       
       <div className="text-tertiary-400 text-base hidden md:flex md:items-centers gap-4">
         {links.map((link) => 
-          <Link key={link.id} href={link.url} onClick={()=>{setActiveLink(link.url)}} 
+          <Link key={link.id} href={link.url} onClick={()=>{setActiveLink(link.url)}}
             className={activeLink === link.url ? 'after:content-[">"] before:content-["<"] relative text-secundary flex gap-1':'hover:text-secundary menu-link relative'}>
-            {link.name}
+            {lang === 'en-US' ? link.name : link.translate}
           </Link>)
           }
       </div>
 
-      <div>
-          <h2 className="md:text-tertiary-600 md:block hidden">ENG</h2>
+      <div className="hidden md:block">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-transparent text-tertiary-600 focus:bg-transparent focus:text-tertiary-400">{lang.toUpperCase()}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <Link href="/en-us" legacyBehavior passHref> 
+                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-secundary-100 text-tertiary-600`}>
+                      EN-US
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/pt-br" legacyBehavior passHref>
+                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-secundary-100 text-tertiary-600`}>
+                      PT-BR
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
 
       {/* Mobile Button */}
