@@ -14,14 +14,17 @@ interface ProjectProps{
 const Project = (props : ProjectProps) => {
  
     return(
-      <div className="bg-tertiary-800 w-[290px] h-auto rounded-lg flex flex-col md:flex-row lg:w-[880px] md:w-[580px] ">
-        <div className={`w-full h-72 relative ${props.id % 2 == 0 ? 'order-2' : ''} bg-tertiary-900`}>
+      <div className="bg-tertiary-800 w-[290px] h-96 rounded-lg flex flex-col md:flex-row lg:w-[880px] md:w-[580px]">
+        <div className={` ${props.id % 2 == 0 ? 'order-2' : ''} bg-tertiary-900`}>
           <Image 
             src={props.image} 
-            alt={props.title} fill={true}
-            className="w-full h-full md:object-fill" />
+            alt={props.title}
+            width={600}
+            height={300}
+            className="h-full"
+          />
         </div>
-        <div className="flex p-6 flex-col gap-5 justify-center items-center lg:w-96 md:w-[290px]">
+        <div className="flex p-6 flex-col h-full gap-5 justify-center items-center lg:w-96 md:w-[290px]">
           <h3 className="font-sans text-primary-200">{props.title}</h3>
           <p className="text-center  font-sans text-primary-200 text-xs">{props.description}</p>
           <div className="flex gap-4 justify-center">

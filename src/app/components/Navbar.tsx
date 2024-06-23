@@ -64,9 +64,9 @@ const Navbar = ({lang}:INavProps) =>{
       <button onClick={handleNav} className="w-[66px] h-[36px] flex items-center justify-center md:hidden">
         {
           nav ? (
-            <Cross1Icon className="text-tertiary-900 w-8 h-8 z-10"/>
+            <Cross1Icon className="text-tertiary-900 w-8 h-8 z-50"/>
           ): (
-            <HamburgerMenuIcon className="text-tertiary-700 w-8 h-8 z-10" />
+            <HamburgerMenuIcon className="text-tertiary-700 w-8 h-8 z-50" />
           ) 
         }
       </button>
@@ -74,13 +74,13 @@ const Navbar = ({lang}:INavProps) =>{
      <div 
      className={
       nav
-        ? "sm:hidden absolute top-0 right-0  left-0 bottom-0 flex flex-col gap-5 justify-center items-center w-full h-screen bg-primary-800 text-left ease-in duration-300"
-        : "sm:hidden absolute top-0 right-0 left-[-100%] bottom-0 flex flex-col gap-5 justify-center items-center w-full h-screen bg-primary-800 text-left ease-in duration-300"
+        ? "sm:hidden absolute top-0 z-40 right-0 left-0 bottom-0 flex flex-col gap-5 justify-center items-center w-full h-screen bg-primary-800 text-left ease-in duration-300"
+        : "sm:hidden absolute top-0 z-40 right-0 left-[-100%] bottom-0 flex flex-col gap-5 justify-center items-center w-full h-screen bg-primary-800 text-left ease-in duration-300"
      }
      >
         {links.map((link) => 
           <Link key={link.id} href={link.url} onClick={()=>{setActiveLink(link.url)}} 
-            className={activeLink === link.url ? 'text-secundary':'text-tertiary-500'}>
+            className={activeLink === link.url ? 'text-secundary':'text-tertiary-500 z-50'}>
             {link.name}
           </Link>)
           }

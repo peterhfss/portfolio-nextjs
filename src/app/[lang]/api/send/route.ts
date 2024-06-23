@@ -6,11 +6,11 @@ const resend = new Resend(process.env.EMAIL_API_KEY);
 
 export async function POST(){
   try{
-    const data = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      const data = await resend.emails.send({
+      from: 'contact@pedrohdev.com',
       to: ['pedroh.fss@gmail.com'],
-      subject: "Hello world",
-      react: EmailTemplate({ firstName: "John" }) as React.ReactElement,
+      subject: 'Create portfolio',
+      react: EmailTemplate({}) as React.ReactElement,
     });
 
     return NextResponse.json({data});

@@ -2,6 +2,9 @@ import Image from "next/image";
 import Profile from "../../../public/images/Profile.jpg";
 import { Locale } from "@/config/i18n.config";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
+import Link from "next/link";
+import resume from "../../../public/Pedro_Henrique-resume.pdf";
+
 interface IAboutProps{
   lang: Locale;
 }
@@ -12,7 +15,7 @@ const AboutSection = ({lang}:IAboutProps) =>{
 
   return(
     <section className="bg-primary h-auto py-24 px-6 flex justify-center items-center lg:px-32 lg:py-36 snap-start" id="about">
-      <div className="flex flex-col lg:w-[1040px] gap-2 px-6 justify-center md:pt-12 lg:h-auto m-auto lg:py-4 lg:gap-20">
+      <div className="flex flex-col lg:w-[1040px] gap-2 px-6 justify-center md:pt-12 lg:h-auto m-auto lg:py-4 lg:gap-20 ">
         <h1 className="font-mono text-secundary text-2xl text-right w-full px-4 lg:text-[32px] md:px-8">
           {dict.about.title}
         </h1>
@@ -35,9 +38,11 @@ const AboutSection = ({lang}:IAboutProps) =>{
             <p className="text-primary-500 text-xs font-mono leading-6 text-justify lg:text-base">
               {dict.about.about_me}
             </p>
-            <button className="text-primary-300 bg-secundary-800 font-mono h-8 w-2/5 rounded hover:bg-secundary-700">
-              Download CV
-            </button>
+           <Link download={resume} href={resume} target="_blank">
+              <button className="text-primary-300 bg-secundary-800 font-mono h-8 w-2/5 rounded hover:bg-secundary-700">
+                Download CV
+              </button>
+           </Link>
           </div>
         </div>
       </div>
