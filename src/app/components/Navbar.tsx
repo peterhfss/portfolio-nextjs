@@ -79,11 +79,22 @@ const Navbar = ({lang}:INavProps) =>{
      }
      >
         {links.map((link) => 
-          <Link key={link.id} href={link.url} onClick={()=>{setActiveLink(link.url)}} 
+          <Link key={link.id} href={link.url} onClick={()=>{setActiveLink(link.url); setNav(false)}} 
             className={activeLink === link.url ? 'text-secundary':'text-tertiary-500 z-50'}>
             {link.name}
           </Link>)
           }
+        <div className="flex gap-4 absolute bottom-3">
+        <Link href="/en-us" legacyBehavior passHref onClick={()=>{setNav(false)}} className="text-tertiary-600 text-xs">
+          EN-US 
+        </Link>
+        <span className="text-tertiary-600"> | </span>
+        <Link href="/pt-br" legacyBehavior passHref onClick={()=>{setNav(false)}} className="text-tertiary-600">
+          
+            PT-BR
+        
+        </Link>
+        </div>
       </div>
     </nav>
   )

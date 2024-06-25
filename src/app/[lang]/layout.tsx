@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { i18n } from "@/config/i18n.config";
+import { Toaster } from "@/components/ui/sonner";
 
 const roboto_mono = Roboto_Mono({ subsets: ["latin"], variable: '--font-roboto-mono' });
 const dm_sans = DM_Sans({ subsets: ["latin"] , variable: '--font-dm-sans' });
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={params.lang}>
-        <body className={`${roboto_mono.variable} ${dm_sans.variable} font-mono scroll-smooth`}>{children}</body>
+        <body className={`${roboto_mono.variable} ${dm_sans.variable} font-mono scroll-smooth`}>
+          {children}
+          <Toaster />  
+        </body>
     </html>
   );
 }
