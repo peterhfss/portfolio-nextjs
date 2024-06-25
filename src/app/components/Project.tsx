@@ -14,7 +14,7 @@ interface ProjectProps{
 const Project = (props : ProjectProps) => {
  
     return(
-      <div className="bg-tertiary-800 w-[290px] h-96 rounded-lg flex flex-col md:flex-row lg:w-[880px] md:w-[580px]">
+      <div className="bg-tertiary-800 w-[290px] border-secundary-200/5 border-2 h-96 rounded-lg flex flex-col md:flex-row lg:w-[880px] md:w-[580px] shadow-[0_80px_40px_-15px_rgba(0,0,0,0.3)]">
         <div className={` ${props.id % 2 == 0 ? 'order-2' : ''} bg-tertiary-900`}>
           <Image 
             src={props.image} 
