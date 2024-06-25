@@ -4,8 +4,8 @@ import Link from "next/link";
 import Logo from '../../../public/images/Logo.svg';
 import links from "../utils/constants/navigation";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
-import { NavigationMenu,NavigationMenuContent,NavigationMenuTrigger, NavigationMenuItem,navigationMenuTriggerStyle, NavigationMenuLink, NavigationMenuList,} from "@/components/ui/navigation-menu"
 import { Locale } from "@/config/i18n.config";
+import { MenuLanguage } from "./MenuLanguage";
 
 interface INavProps{
   lang: Locale;
@@ -39,25 +39,7 @@ const Navbar = ({lang}:INavProps) =>{
       </div>
 
       <div className="hidden md:block">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-tertiary-600 focus:bg-transparent focus:text-tertiary-400">{lang.toUpperCase()}</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <Link href="/en-us" legacyBehavior passHref> 
-                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-secundary-100 text-tertiary-600`}>
-                      EN-US
-                    </NavigationMenuLink>
-                  </Link>
-                  <Link href="/pt-br" legacyBehavior passHref>
-                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-secundary-100 text-tertiary-600`}>
-                      PT-BR
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <MenuLanguage lang={lang} />
       </div>
 
       {/* Mobile Button */}
@@ -84,16 +66,8 @@ const Navbar = ({lang}:INavProps) =>{
             {link.name}
           </Link>)
           }
-        <div className="flex gap-4 absolute bottom-3">
-        <Link href="/en-us" legacyBehavior passHref onClick={()=>{setNav(false)}} className="text-tertiary-600 text-xs">
-          EN-US 
-        </Link>
-        <span className="text-tertiary-600"> | </span>
-        <Link href="/pt-br" legacyBehavior passHref onClick={()=>{setNav(false)}} className="text-tertiary-600">
-          
-            PT-BR
-        
-        </Link>
+        <div className="absolute top-3/4">
+          <MenuLanguage lang={lang} />
         </div>
       </div>
     </nav>
