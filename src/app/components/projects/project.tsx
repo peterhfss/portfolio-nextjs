@@ -30,8 +30,8 @@ export const Project = ({image, title, tags, url_github, url_deploy, description
           <p className="text-left font-sans text-primary-200 text-xs h-20">{description}</p>
           <div className="flex gap-6 justify-end w-full">
             <div className="flex gap-2 text-tertiary-500 w-full items-start flex-wrap">
-              {tags.map((tag)=>
-                <span className="hover:text-secundary-300 hover:cursor-pointer">{tag}</span>
+              {tags.map((tag,index)=>
+                <span key={index} className="hover:text-secundary-300 hover:cursor-pointer">{tag}</span>
              ) }
             </div>
             <Link href={url_github} target="_blank">
