@@ -7,6 +7,7 @@ interface Project{
   url_github: string,
   url_deploy: string,
   translate: string,
+  tags: string[]
 }
 
 const projects : Project[] = [
@@ -18,6 +19,7 @@ const projects : Project[] = [
     url_deploy:'https://peterhfss.github.io/pokedex/',
     url_github: 'https://github.com/peterhfss/pokedex',
     translate: 'Site desenvolvido que integra a API RESTful Pokémon, para realizar buscas por nome ou número e retornar dados sobre o pokémon específico',
+    tags: ['HTML', 'CSS', 'JavaScript']
   },
   {
     id:1,
@@ -27,6 +29,7 @@ const projects : Project[] = [
     url_deploy:'https://peterhfss.github.io/ignite-reactjs-challenge01-todo-list/',
     url_github: 'https://github.com/peterhfss/ignite-reactjs-challenge01-todo-list',
     translate: 'Aplicação desenvolvida com React para organizar tarefas',
+    tags: ['React', 'CSS', 'TypeScript']
   },
   {
     id:2,
@@ -36,6 +39,7 @@ const projects : Project[] = [
     url_deploy:'https://pedrohdev.com/en-US',
     url_github: 'https://github.com/peterhfss/portfolio-nextjs',
     translate: 'Meu portfólio desenvolvido com Next.JS e Typescript',
+    tags: ['Next.js', "TypeScript", "TailwindCSS"]
   },
   
 ]

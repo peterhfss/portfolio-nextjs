@@ -1,6 +1,6 @@
 import { Locale } from "@/config/i18n.config";
 import { ChangeEvent, FormEvent, useRef, useState } from "react";
-import  useAutosizeTextArea  from "../..//hooks/useAutosizeTextArea";
+import  useAutosizeTextArea  from "../../../hooks/useAutosizeTextArea";
 import { toast } from "sonner";
 interface IFormProps{
   lang: Locale; 
@@ -13,7 +13,7 @@ const defaultFormData = {
   message: "",
 }
 
-const Form = ({lang}: IFormProps) =>{
+export const Form = ({lang}: IFormProps) =>{
 
   const [ form, setForm ] = useState(defaultFormData);
   const { firstName, email, service, message } = form;
@@ -102,5 +102,3 @@ const Form = ({lang}: IFormProps) =>{
     </form>
   )
 }
-
-export default Form

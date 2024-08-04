@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from '../../../public/images/Logo.svg';
-import links from "../utils/constants/navigation";
+import Logo from '../../../../public/images/Logo.svg';
+import { links } from "../../utils/constants/navigation";
 import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
 import { Locale } from "@/config/i18n.config";
-import { MenuLanguage } from "./MenuLanguage";
+import { MenuLanguage } from "../menu-language";
 
 interface INavProps{
   lang: Locale;
 }
 
-const Navbar = ({lang}:INavProps) =>{
+export const Navbar = ({lang}:INavProps) =>{
 
   const [nav,setNav] = useState(false);
   const [activeLink, setActiveLink] = useState('/');
@@ -73,5 +73,3 @@ const Navbar = ({lang}:INavProps) =>{
     </nav>
   )
 }
-
-export default Navbar;

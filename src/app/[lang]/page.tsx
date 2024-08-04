@@ -1,6 +1,6 @@
 'use client';
 import { Locale } from '@/config/i18n.config';
-import { Navbar, HeroSection, AboutSection, ProjectsSection, SkillsSection, ContactSection } from "../components";
+import { Navbar, Hero, About, Projects, Skills, Contact } from "../components";
 
 
 export default function Home({params}:{params:{lang:Locale}}) {
@@ -11,11 +11,11 @@ export default function Home({params}:{params:{lang:Locale}}) {
         <Navbar lang={params.lang} />
       </header>
       <main className="h-screen">
-         <HeroSection lang={params.lang}  />
-         <AboutSection lang={params.lang} />
-         <ProjectsSection lang={params.lang} />
-         <SkillsSection lang={params.lang} />
-         <ContactSection lang={params.lang} />
+         <Hero lang={params.lang}  />
+         <About lang={params.lang} />
+         <Projects lang={params.lang} />
+         <Skills lang={params.lang} />
+         <Contact lang={params.lang} />
       </main>
     </div>
   );

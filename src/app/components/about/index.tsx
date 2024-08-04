@@ -1,15 +1,15 @@
 import Image from "next/image";
-import Profile from "../../../public/images/Profile.jpg";
+import Profile from "../../../../public/images/Profile.jpg";
 import { Locale } from "@/config/i18n.config";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
 import Link from "next/link";
-import resume from "../../../public/Pedro_Henrique-resume.pdf";
+import resume from "../../../../public/Pedro_Henrique-resume.pdf";
 
 interface IAboutProps{
   lang: Locale;
 }
 
-const AboutSection = ({lang}:IAboutProps) =>{
+export const About = ({lang}:IAboutProps) =>{
 
   const dict = getDictionaryUseClient(lang);
 
@@ -49,5 +49,3 @@ const AboutSection = ({lang}:IAboutProps) =>{
     </section>
   )
 }
-
-export default AboutSection;

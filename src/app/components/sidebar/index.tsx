@@ -1,7 +1,7 @@
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
-const SidebarSocialLinks = () =>{
+export const Sidebar = () =>{
   return (
     <div className="flex lg:showIconsColumn">
       <div className="flex lg:flex-col gap-6">
@@ -19,4 +19,3 @@ const SidebarSocialLinks = () =>{
   )
 }
 
-export default SidebarSocialLinks

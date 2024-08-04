@@ -1,4 +1,4 @@
-import SidebarSocialLinks from "./SidebarSocialLinks";
+import { Sidebar } from "../sidebar";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
 import { Locale } from '@/config/i18n.config';
 
@@ -6,7 +6,7 @@ interface IHeroProps{
   lang: Locale;
 }
 
-const HeroSection = ({lang}:IHeroProps) =>{
+export const Hero = ({lang}:IHeroProps) =>{
 
   const dict = getDictionaryUseClient(lang)
 
@@ -19,10 +19,8 @@ const HeroSection = ({lang}:IHeroProps) =>{
           <h2 className="text-primary-500 text-sm lg:text-xl font-medium lg:leading-6 lg:w-[560px]">
             {dict.hero.subtitle}
           </h2>
-          <SidebarSocialLinks />
+          <Sidebar />
       </div>
     </section>
   )
 }
-
-export default HeroSection;

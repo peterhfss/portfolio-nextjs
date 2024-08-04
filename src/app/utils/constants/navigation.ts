@@ -7,7 +7,7 @@ interface Link{
   translate: string,
 }
 
-const links : Link[] = [
+export const links : Link[] = [
   {
     id: 0, 
     name:'About', 
@@ -33,5 +33,3 @@ const links : Link[] = [
     translate: 'Contato',
   }
 ]
-
-export default links;

@@ -1,4 +1,4 @@
-import Form from "./Form";
+import { Form } from "../form";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
 import { Locale } from '@/config/i18n.config'
 
@@ -6,7 +6,7 @@ interface IContactProps{
   lang: Locale;
 }
 
-const ContactSection = ({lang}:IContactProps) =>{
+export const Contact = ({lang}:IContactProps) =>{
 
   const dict = getDictionaryUseClient(lang)
 
@@ -31,5 +31,3 @@ const ContactSection = ({lang}:IContactProps) =>{
     
   )
 }
-
-export default ContactSection;

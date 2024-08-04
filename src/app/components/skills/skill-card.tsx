@@ -6,7 +6,7 @@ interface SkillProps{
   icon:IconProps
 }
 
-const SkillCard = (props: SkillProps) => {
+export const SkillCard = (props: SkillProps) => {
   return(
     <div className="flex flex-col w-[220px] h-[260px] bg-tertiary-900 p-6 rounded-[4px] gap-4 items-center justify-center lg:w-[413px] lg:h-[130px]">
       <div className="flex justify-between w-full flex-col items-center gap-4 lg:flex-row">
@@ -19,5 +19,3 @@ const SkillCard = (props: SkillProps) => {
     </div>
   )
 }
-
-export default SkillCard

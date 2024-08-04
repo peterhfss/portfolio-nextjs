@@ -1,7 +1,7 @@
 import Image from "next/image";
-import skills from "../utils/constants/info-skills";
-import SkillCard from "./SkillCard";
-import { NextJSLogo, NodeJSLogo, PythonLogo, ReactLogo, ReactNativeLogo } from ".";
+import skills from "../../utils/constants/info-skills";
+import { SkillCard } from "./skill-card";
+import { NextJSLogo, NodeJSLogo, PythonLogo, ReactLogo, ReactNativeLogo } from "..";
 import { Locale } from "@/config/i18n.config";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
 
@@ -9,7 +9,7 @@ interface ISkillsProps{
   lang: Locale;
 }
 
-const SkillsSection = ({lang}:ISkillsProps) =>{
+export const Skills = ({lang}:ISkillsProps) =>{
 
   const dict = getDictionaryUseClient(lang);
 
@@ -53,5 +53,3 @@ const SkillsSection = ({lang}:ISkillsProps) =>{
     </section>
   )
 }
-
-export default SkillsSection;
