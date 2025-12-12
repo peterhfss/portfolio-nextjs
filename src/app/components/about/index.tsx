@@ -2,8 +2,6 @@ import Image from "next/image";
 import Profile from "../../../../public/images/Profile.jpg";
 import { Locale } from "@/config/i18n.config";
 import  { getDictionaryUseClient } from '@/dictionaries//default-dictionary-use-client';
-import Link from "next/link";
-import resume from "../../../../public/Pedro_Henrique-resume.pdf";
 
 interface IAboutProps{
   lang: Locale;
@@ -38,11 +36,13 @@ export const About = ({lang}:IAboutProps) =>{
             <p className="text-primary-500 text-xs font-mono leading-6 text-justify lg:text-base">
               {dict.about.about_me}
             </p>
-           <Link download={resume} href={resume} target="_blank">
-              <button className="text-primary-300 bg-secundary-800 font-mono h-8 w-2/5 rounded hover:bg-secundary-700">
-                Download CV
-              </button>
-           </Link>
+           <a href="/Pedro_Henrique_resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer">
+                <button className="text-primary-300 bg-secundary-800 font-mono h-8 w-2/5 rounded hover:bg-secundary-700">
+                  Download CV
+                </button>
+           </a>
           </div>
         </div>
       </div>
