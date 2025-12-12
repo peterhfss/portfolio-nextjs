@@ -7,7 +7,8 @@ import { Toaster } from "@/components/ui/sonner";
 const roboto_mono = Roboto_Mono({ subsets: ["latin"], variable: '--font-roboto-mono' });
 const dm_sans = DM_Sans({ subsets: ["latin"] , variable: '--font-dm-sans' });
 
-export async function generateStaticParams(){
+export async function generateStaticParams() {
+  
   const languages = i18n.locales.map((lang) => ({lang}));
   return languages;
 }
@@ -20,14 +21,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,params
 }: Readonly<{
   children: React.ReactNode,
-  params:{lang: string};
+  params:Promise<{lang:string}>;
 }>) {
+
+  const {lang} = await params;
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
         <body className={`${roboto_mono.variable} ${dm_sans.variable} font-mono scroll-smooth`}>
           {children}
           <Toaster />  
